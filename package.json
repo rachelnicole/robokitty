@@ -1,0 +1,19 @@
+{
+  "name": "IoT-Labs-Photon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThingLabsIo/IoTLabs/Photon"
+  },
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sample app that connects a device to Azure using Node.js",
+  "main": "app.js",
+  "author": "YOUR NAME",
+  "license": "MIT",
+  "dependencies": {
+    "http": "0.0.0",
+    "johnny-five": "^0.9.6",
+    "particle-io": "^0.10.1",
+    "socket.io": "^1.3.7"
+  }
+}

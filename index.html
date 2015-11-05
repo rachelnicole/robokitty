@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script>
+   		var socket = io.connect('http://localhost');
+    </script>
+  </head>
+  <body>
+    <button name="on-button" class="turn-on">Turn LED On</button>
+    <button name="off-button" class="turn-off">Turn LED Off</button>
+
+  <script>
+	  document.getElementsByClassName("turn-on")[0].addEventListener("click", function(e) {
+			console.log("you clicked on");
+			socket.emit('click');
+			e.preventDefault();
+		});
+
+		document.getElementsByClassName("turn-off")[0].addEventListener("click", function(e) {
+			console.log("you clicked off");
+			socket.emit('click');
+			e.preventDefault();
+		});
+  </script>
+  </body>
+</html>
