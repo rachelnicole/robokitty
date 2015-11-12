@@ -29,6 +29,8 @@ var board = new five.Board({
   }) 
 });
 
+
+// Creates a string that defines hourly increments
 function makeCronString(input){
   var accum = '0';
   var increment = parseInt(input, 10);
@@ -54,22 +56,25 @@ board.on("ready", function() {
 
     socket.on('click', function () {
       console.log('socket is clicked');
-      servo.sweep([45, 135]);
+      servo.to(90, 500);
     });
 
-     socket.on('feeding', function(timeValue){
+    socket.on('feeding', function(timeValue){
+      // Cancels out existing time preferences.
       if (currentJob) {
         currentJob.stop();
       }
 
+      if (timeValue === '0') {
+        return;
+      }
+
       var feedingInterval = makeCronString(timeValue);
 
+      // Sets Cron Job for feeding schedule
       currentJob = new CronJob(feedingInterval, function() {
-        console.log('You will see this message cron job');
+        servo.to(90, 500);
       }, null, true, 'America/New_York');
-
-      console.log(timeValue);
-
     });
   }); 
 });

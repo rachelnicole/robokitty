@@ -8,10 +8,10 @@
   <body>
     <button name="on-button" class="turn-on">Turn Motor On</button>
 
-  <form>
     <!-- The second value will be selected initially -->
 		<select name="select" id="schedule">
-			<option value="0" selected>How often would you like to dispense food?</option>
+			<option selected>How often would you like to dispense food?</option>
+			<option value="0">Clear Schedule</option>
 		  <option value="1">Every hour</option> 
 		  <option value="2">Every 2 hours</option> 
 		  <option value="3">Every 3 hours</option> 
@@ -19,8 +19,8 @@
 		  <option value="6">Every 6 hours</option> 
 		  <option value="8">Every 8 hours</option> 
 		</select>
-		<textarea id="schedule-value"></textarea>
-	</form>
+
+		<button id="clear-schedule">Clear Set schedule</button>
 
   <script>
 	  document.getElementsByClassName("turn-on")[0].addEventListener("click", function(e) {
@@ -28,6 +28,7 @@
 			socket.emit('click');
 			e.preventDefault();
 		});
+
 
     function addEventHandler(elem, eventType, handler) {
       if (elem.addEventListener)
