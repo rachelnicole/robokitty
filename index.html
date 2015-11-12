@@ -6,8 +6,21 @@
     </script>
   </head>
   <body>
-    <button name="on-button" class="turn-on">Turn LED On</button>
-    <button name="off-button" class="turn-off">Turn LED Off</button>
+    <button name="on-button" class="turn-on">Turn Motor On</button>
+
+  <form>
+    <!-- The second value will be selected initially -->
+		<select name="select" id="schedule">
+			<option value="0" selected>How often would you like to dispense food?</option>
+		  <option value="1">Every hour</option> 
+		  <option value="2">Every 2 hours</option> 
+		  <option value="3">Every 3 hours</option> 
+		  <option value="4">Every 4 hours</option> 
+		  <option value="6">Every 6 hours</option> 
+		  <option value="8">Every 8 hours</option> 
+		</select>
+		<textarea id="schedule-value"></textarea>
+	</form>
 
   <script>
 	  document.getElementsByClassName("turn-on")[0].addEventListener("click", function(e) {
@@ -16,11 +29,20 @@
 			e.preventDefault();
 		});
 
-		document.getElementsByClassName("turn-off")[0].addEventListener("click", function(e) {
-			console.log("you clicked off");
-			socket.emit('click');
-			e.preventDefault();
-		});
+    function addEventHandler(elem, eventType, handler) {
+      if (elem.addEventListener)
+        elem.addEventListener (eventType, handler, false);
+      else if (elem.attachEvent)
+        elem.attachEvent ('on' + eventType, handler); 
+    }
+
+    addEventHandler(document, 'DOMContentLoaded', function() {
+        addEventHandler(document.getElementById('schedule'), 'change', function() {
+            console.log(this.value);
+            socket.emit('feeding', this.value);
+        });
+    });
+
   </script>
   </body>
 </html>

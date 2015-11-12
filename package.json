@@ -11,6 +11,7 @@
   "author": "YOUR NAME",
   "license": "MIT",
   "dependencies": {
+    "cron": "^1.0.9",
     "http": "0.0.0",
     "johnny-five": "^0.9.6",
     "particle-io": "^0.10.1",
