@@ -41,29 +41,42 @@ function makeCronString(input){
   return '0 0 ' + accum + ' * * *';
 }
 
-var currentJob;
+var currentJob,
+    currentTimeValue;
+
 
 board.on("ready", function() {
 
   var servo = new five.Servo({
-    pin: 'd0', 
-    type: "continuous"
+    pin: 'd0',
+    type: 'continuous',
+    deadband: [ 84, 96 ]
   });
 
   io.sockets.on('connection', function (socket) {
-
     console.log('sockets on connection');
 
+    socket.emit('setSchedule', currentTimeValue);
+
     socket.on('click', function () {
-      console.log('socket is clicked');
-      servo.to(90, 500);
+      console.log('socket is on');
+      servo.cw(1);
+
+      setTimeout(function() { 
+        servo.stop(); 
+        console.log('settimeout');  
+      }, 5000);
+
     });
 
     socket.on('feeding', function(timeValue){
+      console.log('schedule is set');
       // Cancels out existing time preferences.
       if (currentJob) {
         currentJob.stop();
       }
+
+      currentTimeValue = timeValue;
 
       if (timeValue === '0') {
         return;
