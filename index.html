@@ -1,60 +1,60 @@
 <html>
-	<head>
-		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
-		<script>
-			var socket = io.connect('http://localhost');
-		</script>
-		<style>
-			body {
-				background-color: #74c7a4;
-				margin: 0;
-			}
-		</style>
-	</head>
-	<body>
-		<button name="on-button" class="turn-on mdl-button">Turn Motor On</button>
+  <head>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <script>
+      var socket = io.connect('http://localhost');
+    </script>
+    <style>
+      body {
+        background-color: #74c7a4;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button name="on-button" class="turn-on mdl-button">Turn Motor On</button>
 
-		<!-- The second value will be selected initially -->
-		<select name="select" id="schedule">
-			<option selected>How often would you like to dispense food?</option>
-			<option value="0">Clear Schedule</option>
-			<option value="1">Every hour</option> 
-			<option value="2">Every 2 hours</option> 
-			<option value="3">Every 3 hours</option> 
-			<option value="4">Every 4 hours</option> 
-			<option value="6">Every 6 hours</option> 
-			<option value="8">Every 8 hours</option> 
-		</select>
+    <!-- The second value will be selected initially -->
+    <select name="select" id="schedule">
+      <option selected>How often would you like to dispense food?</option>
+      <option value="0">Clear Schedule</option>
+      <option value="1">Every hour</option> 
+      <option value="2">Every 2 hours</option> 
+      <option value="3">Every 3 hours</option> 
+      <option value="4">Every 4 hours</option> 
+      <option value="6">Every 6 hours</option> 
+      <option value="8">Every 8 hours</option> 
+    </select>
 
-		<button id="clear-schedule">Clear Set schedule</button>
+    <button id="clear-schedule">Clear Set schedule</button>
 
-		<script>
-			document.getElementsByClassName("turn-on")[0].addEventListener('click', function(e) {
-				console.log('you clicked on');
-				socket.emit('click');
-				e.preventDefault();
-			});
+    <script>
+      document.getElementsByClassName("turn-on")[0].addEventListener('click', function(e) {
+        console.log('you clicked on');
+        socket.emit('click');
+        e.preventDefault();
+      });
 
 
-			function addEventHandler(elem, eventType, handler) {
-				if (elem.addEventListener) {
-					elem.addEventListener (eventType, handler, false);
-				}
-				else if (elem.attachEvent) {
-					elem.attachEvent ('on' + eventType, handler); 
-				}
-	    }
+      function addEventHandler(elem, eventType, handler) {
+        if (elem.addEventListener) {
+          elem.addEventListener (eventType, handler, false);
+        }
+        else if (elem.attachEvent) {
+          elem.attachEvent ('on' + eventType, handler); 
+        }
+      }
 
-			addEventHandler(document, 'DOMContentLoaded', function() {
-				addEventHandler(document.getElementById('schedule'), 'change', function() {
-					console.log(this.value);
-					socket.emit('feeding', this.value);
-				});
-				socket.on('setSchedule', function (timeValue) {
-					console.log(timeValue);
-				});
-			});
-		</script>
-	</body>
+      addEventHandler(document, 'DOMContentLoaded', function() {
+        addEventHandler(document.getElementById('schedule'), 'change', function() {
+          console.log(this.value);
+          socket.emit('feeding', this.value);
+        });
+        socket.on('setSchedule', function (timeValue) {
+          console.log(timeValue);
+        });
+      });
+    </script>
+  </body>
 </html>
