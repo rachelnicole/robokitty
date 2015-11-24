@@ -37,7 +37,17 @@ Once you have all of your materials handy, you're ready to start.
 
 ### Setting up your Particle Photon
 
-First thing you need to do is power up the photon, plug in the cable and connect it to your computer. 
+A great guide can be found right on the Particle site [here](https://docs.particle.io/guide/getting-started/connect/photon/), but I will walk you through it! I'm going to assume you're doing this from scratch and don't have anything installed on your computer.
+
+First thing you need to do is power up the photon, plug in the cable and connect it to your computer.
+
+Now you need to install Node, for sake of ease, go to the [Node site](https://nodejs.org/) and grab the latest version.
+
+Once you've gotten Node installed, the next step differs depending on if you're using a Mac OS or Windows.
+
+If you are on a Windows machine, please follow the steps called "Installing the Particle Driver" and "Opening the Command Prompt" which you can find [here](https://docs.particle.io/guide/getting-started/connect/photon/#installing-the-particle-driver).
+
+Now it's time to install the Particle CLI (Command Line Interface).
 
 ### Firmware
-Now we need to flash the Photon with new Firmware. We're going to be using (VoodooSpark)[https://github.com/voodootikigod/voodoospark]. We can do this 
+Now we need to flash the Photon with new Firmware. We're going to be using [VoodooSpark](https://github.com/voodootikigod/voodoospark). We can do this 
