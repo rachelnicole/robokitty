@@ -85,4 +85,14 @@ The first thing you need to do regardless of the method you choose is grab the l
 Save that file locally. 
 
 
+### Get ready with the code?
 
+talk about cloning the repo and stuff and npm update stuff
+
+### Talk about the hardware and wiring info
+
+wiring diagram, talk about soldering and stuff
+
+### How to run 
+
+talk about how to run the code, what the website looks like, what the two different modes that work are
