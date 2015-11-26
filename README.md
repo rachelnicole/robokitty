@@ -127,7 +127,7 @@ Before we can actually run the code, we need to set up the hardware part.
 
 Wire up your photon according to this diagram.
 
-![Robokitty Logo](robokitty-wiring.png)
+![Robokitty Wiring Diagram](robokitty_wiring.png)
 
 The 4xAA battery pack wires need to be soldered to two of the MtoM wires that plug into the left rails of the breadboard. Cut off an end of each of the wires and solder the battery pack onto it. 
 
