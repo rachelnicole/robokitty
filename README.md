@@ -39,6 +39,8 @@ Once you have all of your materials handy, you're ready to start.
 
 A great guide can be found right on the Particle site [here](https://docs.particle.io/guide/getting-started/connect/photon/), but I will walk you through it! I'm going to assume you're doing this from scratch and don't have anything installed on your computer.
 
+Make sure you've already set up an account and logged in on the Particle website before starting the tutorial.
+
 First thing you need to do is power up the photon, plug in the cable and connect it to your computer.
 
 Now you need to install Node, for sake of ease, go to the [Node site](https://nodejs.org/) and grab the latest version.
@@ -47,7 +49,40 @@ Once you've gotten Node installed, the next step differs depending on if you're 
 
 If you are on a Windows machine, please follow the steps called "Installing the Particle Driver" and "Opening the Command Prompt" which you can find [here](https://docs.particle.io/guide/getting-started/connect/photon/#installing-the-particle-driver).
 
-Now it's time to install the Particle CLI (Command Line Interface).
+If you are on a Mac, there are no additional steps to take before our next one.
+
+It's time to install the Particle CLI (Command Line Interface)! 
+
+### Particle CLI
+
+Open up your CLI of choice, and type 
+```
+npm install -g particle-cli
+```
+
+Once it is done downloading, type 
+
+```
+particle cloud login
+```
+
+And answer the prompts with the login information you created earlier for the Particle site.
+
+
+### Claiming a Photon
+
+The Particle site has a thorough guide to claiming and setting up a photon [here](https://docs.particle.io/guide/getting-started/connect/photon/#connecting-your-device).
+
 
 ### Firmware
-Now we need to flash the Photon with new Firmware. We're going to be using [VoodooSpark](https://github.com/voodootikigod/voodoospark). We can do this 
+Now we need to flash the Photon with new Firmware. We're going to be using [VoodooSpark](https://github.com/voodootikigod/voodoospark). We can do this one of two ways.
+
+1. Using the Particle IDE (Interactive Development Environment), which allows you to copy and paste code into an editor in your browser and transfer it to your Photon.
+2. The Particle CLI, which utilizes a local file to transfer to the Photon.
+
+The first thing you need to do regardless of the method you choose is grab the latest version of the firmware from [here](https://github.com/voodootikigod/voodoospark/blob/master/firmware/voodoospark.cpp).
+
+Save that file locally. 
+
+
+
