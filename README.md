@@ -99,7 +99,7 @@ particle cloud flash PARTICLE_DEVICE_ID voodoospark.cpp
 
 Now you're ready to start working with the code for the feeder.
 
-### Get ready with the code?
+### Feeder Code
 
 Clone this repo into your robokitty folder by typing the following:
 
@@ -123,7 +123,7 @@ Click on the settings link on the left, and copy the access token and add it to 
 
 Before we can actually run the code, we need to set up the hardware part.
 
-### Talk about the hardware and wiring info
+### Hardware & Wiring Info
 
 Wire up your photon according to this diagram.
 
