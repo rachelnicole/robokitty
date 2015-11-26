@@ -7,8 +7,8 @@ var http = require('http'),
 
 
 // Set up the access credentials for Particle
-var token = process.env.PARTICLE_KEY || 'f2d4ea74c99d6c1706ce78808af4be4cdd5317d9'; 
-var deviceId = process.env.PHOTON_ID || '300023000247343339373536';
+var token = process.env.PARTICLE_KEY || 'REPLACE WITH YOUR PARTICLE KEY'; 
+var deviceId = process.env.PHOTON_ID || 'REPLACE WITH YOUR PHOTON ID';
 
 // Send index.html to all requests
 var app = http.createServer(function(req, res) {
