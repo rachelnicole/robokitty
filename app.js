@@ -1,5 +1,6 @@
 var http = require('http'),
     fs = require('fs'),
+    RoboKitty = require('robokitty'),
     index = fs.readFileSync(__dirname + '/index.html'),
     five = require ('johnny-five'),
     Particle = require('particle-io'),
@@ -29,17 +30,6 @@ var board = new five.Board({
   }) 
 });
 
-
-// Creates a string that defines hourly increments
-function makeCronString(input){
-  var accum = '0';
-  var increment = parseInt(input, 10);
-  while( increment < 24 ){
-    accum = accum + ',' + increment
-    increment = increment + parseInt(input, 10);
-  }
-  return '0 0 ' + accum + ' * * *';
-}
 
 var currentJob,
     currentTimeValue;
@@ -83,7 +73,7 @@ board.on('ready', function() {
         return;
       }
 
-      var feedingInterval = makeCronString(timeValue);
+      var feedingInterval = RoboKitty.makeCronString(timeValue);
 
       // Sets Cron Job for feeding schedule
       currentJob = new CronJob(feedingInterval, function() {
