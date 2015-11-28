@@ -157,5 +157,3 @@ The button is for instantaneous feeding, while the dropdown is for interval feed
 Push the button! 
 
 The servo *should* turn and stop after 5 seconds. If it doesn't stop, you may need to tune your servo. If it has a trim pot, you can just turn until it stops. If it doesn't, you may need to open up the bottom of the servo and turn the little knob until it stops. If you can't figure it out, please feel free to open an issue and I will try and help you out as best as I can. I'm probably just as new to hardware as you are. :)
-
-
