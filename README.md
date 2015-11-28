@@ -147,7 +147,7 @@ If you bought the same servo as me, you may have some tweaking to do which we wi
 In the command line, navigate into the main robokitty repository folder. Type the following:
 
 ```
-node app.js
+npm start
 ```
 
 A browser window should now open up at [http://localhost:3000](http://localhost:3000).
