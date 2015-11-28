@@ -109,10 +109,10 @@ git clone git@github.com:rachelnicole/robokitty.git
 
 This is going to pull down all of the files into your robokitty directory, and create a new directory with the same name inside.
 
-Navigate into the new robokitty folder, you're going to have to update your node modules.
+Navigate into the new robokitty folder, you're going to have to install your dependencies.
 
 ```
-npm update
+npm install
 ```
 
 This will pull down all of the dependencies you need.
@@ -125,7 +125,11 @@ Before we can actually run the code, we need to set up the hardware part.
 
 ### Hardware & Wiring Info
 
-Wire up your photon according to this diagram.
+Take the photon which is probably still attached to your computer, you need to attach it to an external power supply.
+
+All you need is to plug the photon cord into an A/C plug with a usb port, the same kind that you plug your iphone into to charge.
+
+Next wire up your photon according to this diagram.
 
 ![Robokitty Wiring Diagram](robokitty_wiring.png)
 
