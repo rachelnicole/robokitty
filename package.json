@@ -13,9 +13,11 @@
   "dependencies": {
     "cron": "^1.0.9",
     "express": "^4.13.3",
-    "http": "0.0.0",
     "johnny-five": "^0.9.11",
     "particle-io": "^0.10.1",
     "socket.io": "^1.3.7"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
 }

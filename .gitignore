@@ -5,7 +5,6 @@ lab01.js
 
 
 # OS generated files #
-######################
 .DS_Store
 .DS_Store?
 ._*
@@ -13,3 +12,5 @@ lab01.js
 .Trashes
 ehthumbs.db
 Thumbs.db
+node_modules
+*log

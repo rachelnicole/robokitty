@@ -18,9 +18,7 @@ Let's get started!
 | Male to Male jumper wires  | [Adafruit / $3.95 to $7.95 depending on length](http://www.adafruit.com/search?q=male+male+jumper&b=1)  |
 | 4xAA Battery Pack with ON/OFF Switch  | [Adafruit / $2.95](https://www.adafruit.com/products/830)  |
 | 4xAA Batteries  | Buy these wherever. $4 - 8  |
-| 4xAA Battery Pack with ON/OFF Switch  | [Adafruit / $2.95](https://www.adafruit.com/products/830)  |
 | Continuous Rotation Servo  | [Adafruit / $11.95](https://www.adafruit.com/products/154)  |
-| 4xAA Battery Pack with ON/OFF Switch  | [Adafruit / $2.95](https://www.adafruit.com/products/830)  |
 | Dry Goods Dispenser (last I checked I bought the last one... Sorry D:) | [Amazon / $24.99](http://www.amazon.com/gp/product/B00TECVEQE?psc=1&redirect=true&ref_=oh_aui_detailpage_o02_s00)  |
 | USB Cube Charger (like for an iphone) | [Amazon / $8.29](http://www.amazon.com/Apple-Authentic-Adapter-iPhone-Touch/dp/B010NYA6VK/ref=sr_1_5?ie=UTF8&qid=1448330240&sr=8-5&keywords=usb+cube+charger)  |
 
@@ -147,7 +145,7 @@ If you bought the same servo as me, you may have some tweaking to do which we wi
 In the command line, navigate into the main robokitty repository folder. Type the following:
 
 ```
-node app.js
+npm start
 ```
 
 A browser window should now open up at [http://localhost:3000](http://localhost:3000).
@@ -159,5 +157,3 @@ The button is for instantaneous feeding, while the dropdown is for interval feed
 Push the button! 
 
 The servo *should* turn and stop after 5 seconds. If it doesn't stop, you may need to tune your servo. If it has a trim pot, you can just turn until it stops. If it doesn't, you may need to open up the bottom of the servo and turn the little knob until it stops. If you can't figure it out, please feel free to open an issue and I will try and help you out as best as I can. I'm probably just as new to hardware as you are. :)
-
-
