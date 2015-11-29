@@ -1,15 +1,16 @@
 {
-  "name": "IoT-Labs-Photon",
+  "name": "Robokitty",
+  "description": "Node Powered Automated Cat Feeder",
+  "author": "Rachel White <loveless@gmail.com>",
+  "url": "http://imcool.online/robokitty",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ThingLabsIo/IoTLabs/Photon"
+    "url": "https://github.com/rachelnicole/robokitty"
   },
   "version": "0.1.0",
   "private": true,
-  "description": "Sample app that connects a device to Azure using Node.js",
   "main": "app.js",
-  "author": "YOUR NAME",
-  "license": "MIT",
+  "license": "GPL-2.0",
   "dependencies": {
     "cron": "^1.0.9",
     "express": "^4.13.3",
