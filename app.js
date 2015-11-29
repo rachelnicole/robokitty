@@ -1,6 +1,7 @@
 var http = require('http'),
     fs = require('fs'),
-    index = fs.readFileSync(__dirname + '/index.html'),
+    path = require('path'),
+    index = fs.readFileSync(path.join(__dirname, 'index.html')),
     five = require ('johnny-five'),
     Particle = require('particle-io'),
     CronJob = require('cron').CronJob;
