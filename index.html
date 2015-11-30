@@ -1,10 +1,6 @@
 <html>
   <head>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
-    <script>
-      var socket = io.connect('http://localhost');
-    </script>
     <style>
       body {
         background-color: #74c7a4;
@@ -29,32 +25,45 @@
 
     <button id="clear-schedule">Clear Set schedule</button>
 
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script>
-      document.getElementsByClassName("turn-on")[0].addEventListener('click', function(e) {
-        console.log('you clicked on');
-        socket.emit('click');
+      var socket = io.connect('http://localhost');
+      var turnOn = document.getElementsByClassName("turn-on")[0];
+      var schedule = document.getElementById('schedule');
+
+      addEventHandler(turnOn, 'click', function(e) {
         e.preventDefault();
+
+        log('you clicked on');
+        socket.emit('click');
       });
 
+      addEventHandler(schedule, 'change', function() {
+        log(this.value);
+        socket.emit('feeding', this.value);
+      });
+
+      socket.on('setSchedule', function (timeValue) {
+        log(timeValue);
+      });
 
       function addEventHandler(elem, eventType, handler) {
         if (elem.addEventListener) {
-          elem.addEventListener (eventType, handler, false);
+          elem.addEventListener(eventType, handler, false);
         }
         else if (elem.attachEvent) {
-          elem.attachEvent ('on' + eventType, handler); 
+          elem.attachEvent('on' + eventType, handler); 
         }
       }
 
-      addEventHandler(document, 'DOMContentLoaded', function() {
-        addEventHandler(document.getElementById('schedule'), 'change', function() {
-          console.log(this.value);
-          socket.emit('feeding', this.value);
-        });
-        socket.on('setSchedule', function (timeValue) {
-          console.log(timeValue);
-        });
-      });
+      function log(msg) {
+        if (console) {
+          console.log(msg);
+        }
+        else {
+          alert(msg);
+        }
+      }
     </script>
   </body>
 </html>
