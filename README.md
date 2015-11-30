@@ -83,13 +83,9 @@ particle serial identify
 
 The first thing you need after this is grab the latest version of the firmware from [here](https://github.com/voodootikigod/voodoospark/blob/master/firmware/voodoospark.cpp).
 
-Save that file locally. I like to create a folder for all my github repositories usually in my Documents folder. Open up your command line interface and navigate to the folder that you want your working directory in. Once you have that folder open, type the following. 
+Save that file locally, and navigate to the directory in the command line.
 
-```
-mkdir robokitty
-```
-
-Change to that directory, put the firmware file that you downloaded into it. Next thing you need to do is flash the firmware, if you are connected to your photon you should be ready. Type the following.
+Next thing you need to do is flash the firmware, if you are connected to your photon you should be ready. Type the following.
 
 ```
 particle cloud flash PARTICLE_DEVICE_ID voodoospark.cpp
@@ -99,13 +95,11 @@ Now you're ready to start working with the code for the feeder.
 
 ### Feeder Code
 
-Clone this repo into your robokitty folder by typing the following:
+Clone this repo into your directory of choice by typing the following:
 
 ```
 git clone git@github.com:rachelnicole/robokitty.git
 ```
-
-This is going to pull down all of the files into your robokitty directory, and create a new directory with the same name inside.
 
 Navigate into the new robokitty folder, you're going to have to install your dependencies.
 
@@ -133,7 +127,7 @@ Next wire up your photon according to this diagram.
 
 The 4xAA battery pack wires need to be soldered to two of the MtoM wires that plug into the left rails of the breadboard. Cut off an end of each of the wires and solder the battery pack onto it. 
 
-Now, you need to connect your servo to the dispenser handle. Do this the best way you see fit. It will work even with duct tape, or you can glue your servo horn to the handle (making sure you keep them parallel to each other so it doesn't break). Experiment with it so you find the best way that you see fit. I built a chassis for the servo out of cardboard and duct tape to support the servo while it's turning. You'll have to do the same. Do whatever you want! Acrylic, cardboard, or something else I haven't thought of.
+Now, you need to connect your servo to the dispenser handle. Do this the best way you see fit. It will work even with duct tape, or you can glue your servo horn to the handle (making sure you keep them parallel to each other so it doesn't break). Experiment with it so you find the best way that you see fit. I built a chassis for the servo out of cardboard and duct tape to support the servo while it's turning. You'll have to do the same. Do whatever you want! Acrylic, cardboard, or something else I haven't thought of. I also added a chute to the bottom of the feeder dispenser area that I used a cut up plastic bottle for, because the distance between the mouth of the dispenser and the base was too close, it goes out further in front and allows the cats to access it a lot easier.
 
 Once you're all wired up, you're ready to run the code.
 
@@ -156,4 +150,6 @@ The button is for instantaneous feeding, while the dropdown is for interval feed
 
 Push the button! 
 
-The servo *should* turn and stop after 5 seconds. If it doesn't stop, you may need to tune your servo. If it has a trim pot, you can just turn until it stops. If it doesn't, you may need to open up the bottom of the servo and turn the little knob until it stops. If you can't figure it out, please feel free to open an issue and I will try and help you out as best as I can. I'm probably just as new to hardware as you are. :)
+The servo *should* turn and stop after 5 seconds. If it doesn't stop, you may need to tune your servo. If it has a trim pot, you can just turn until it stops. If it doesn't, you may need to open up the bottom of the servo and turn the little knob until it stops. If you can't figure it out, please feel free to [leave a comment here](https://github.com/rachelnicole/robokitty/issues/25) I will try and help you out as best as I can. I'm probably just as new to hardware as you are. :)
+
+![Robokitty gif](robokitty-in-action.gif)
