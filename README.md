@@ -19,7 +19,7 @@ Let's get started!
 | 4xAA Battery Pack with ON/OFF Switch  | [Adafruit / $2.95](https://www.adafruit.com/products/830)  |
 | 4xAA Batteries  | Buy these wherever. $4 - 8  |
 | Continuous Rotation Servo  | [Adafruit / $11.95](https://www.adafruit.com/products/154)  |
-| Dry Goods Dispenser | [Amazon / $20.99](http://www.amazon.com/Zevro-KCH-06114-Dispenser-Black-Chrome/dp/B00013K8O4/)  |
+| Dry Goods Dispenser | [Amazon / $20.99](http://www.amazon.com/Zevro-KCH-06114-Dispenser-Black-Chrome/dp/B00013K8O4/) or [Amazon / $16.14](http://www.amazon.com/Portion-Control-Compact-Edition-Dispenser/dp/B009Q8PZMK)  |
 | USB Cube Charger (like for an iphone) | [Amazon / $8.29](http://www.amazon.com/Apple-Authentic-Adapter-iPhone-Touch/dp/B010NYA6VK/ref=sr_1_5?ie=UTF8&qid=1448330240&sr=8-5&keywords=usb+cube+charger)  |
 
 *Additional Needs*
