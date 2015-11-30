@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="http://localhost:3000/robokitty.css">
+    <style>
+      body {
+        background-color: #74c7a4;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button name="on-button" class="turn-on mdl-button">Turn Motor On</button>
+
+    <!-- The second value will be selected initially -->
+    <select name="select" id="schedule">
+      <option selected>How often would you like to dispense food?</option>
+      <option value="0">Clear Schedule</option>
+      <option value="1">Every hour</option> 
+      <option value="2">Every 2 hours</option> 
+      <option value="3">Every 3 hours</option> 
+      <option value="4">Every 4 hours</option> 
+      <option value="6">Every 6 hours</option> 
+      <option value="8">Every 8 hours</option> 
+    </select>
+
+    <button id="clear-schedule">Clear Set schedule</button>
+
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://localhost:3000/robokitty.js"></script>
+  </body>
+</html>
