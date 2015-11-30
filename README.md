@@ -109,6 +109,11 @@ npm install
 
 This will pull down all of the dependencies you need.
 
+To configure the Photon Device ID & Token, you can either set it when you start the feeder with the following.
+```$PARTICLE_KEY=your_particle_key $PHOTON_ID=your_photon_id npm start```
+
+Or you can follow through with the rest of this section.
+
 The next step is to update the config.js file with your Photon's Token and Device ID. The Device ID is the same one that you had used in the previous firmware step. Add that in the deviceId object on the line for device, make the device string no longer empty.
 
  To get the access token, navigate to the [Particle Build Site](https://build.particle.io/).
