@@ -1,7 +1,12 @@
 {
   "name": "Robokitty",
   "description": "Node Powered Automated Cat Feeder",
-  "author": "Rachel White, Milan Loveless",
+  "author": "Rachel White <loveless@gmail.com>",
+  "contributors": [
+    "Jacob M. Roufa <jacob.roufa@gmail.com>",
+    "Lee Dohm <lee@lee-dohm.com>",
+    "Milan Loveless <milan.loveless@gmail.com>"
+  ],
   "url": "http://imcool.online/robokitty",
   "repository": {
     "type": "git",
@@ -12,7 +17,7 @@
   "main": "app.js",
   "license": "GPL-2.0",
   "dependencies": {
-    "config": "^1.17.1",
+    "convict": "^1.0.1",
     "cron": "^1.0.9",
     "hapi": "^11.1.2",
     "inert": "^3.2.0",
@@ -25,6 +30,7 @@
     "test": "lab test"
   },
   "devDependencies": {
+    "chai": "^3.4.1",
     "lab": "^7.3.0"
   }
 }
