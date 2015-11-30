@@ -109,9 +109,11 @@ npm install
 
 This will pull down all of the dependencies you need.
 
-The next step is to update the app.js file with your Photon's Token and Device ID. The Device ID is the same one that you had used in the previous firmware step. To get the access token, navigate to the [Particle Build Site](https://build.particle.io/).
+The next step is to update the config.js file with your Photon's Token and Device ID. The Device ID is the same one that you had used in the previous firmware step. Add that in the deviceId object on the line for device, make the device string no longer empty.
 
-Click on the settings link on the left, and copy the access token and add it to the appropriate line in your app.js file. 
+ To get the access token, navigate to the [Particle Build Site](https://build.particle.io/).
+
+Click on the settings link on the left, and copy the access token and add it to the appropriate line in your config.js file. It will be the in the token object that asks for device with an empty string. Add it in so the string is no longer empty.
 
 Before we can actually run the code, we need to set up the hardware part.
 
