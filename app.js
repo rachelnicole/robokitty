@@ -1,7 +1,9 @@
-var http = require('http'),
+var express = require('express'),
+    app = express(),
     fs = require('fs'),
     path = require('path'),
     index = fs.readFileSync(path.join(__dirname, 'index.html')),
+    assets = path.join(__dirname, 'public'),
     five = require ('johnny-five'),
     Particle = require('particle-io'),
     CronJob = require('cron').CronJob;
@@ -11,14 +13,17 @@ var http = require('http'),
 var token = process.env.PARTICLE_KEY || 'replace'; 
 var deviceId = process.env.PHOTON_ID || 'replace';
 
-// Send index.html to all requests
-var app = http.createServer(function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end(index);
+// Serve index.html
+app.get('/', function(req, res) {
+  res.render(index);
 });
 
-// Socket.io server listens to our app
-var io = require('socket.io').listen(app);
+// Static assets
+app.use('/assets', express.static(assets));
+
+// Socket.io server listens to our express instance
+var server = app.listen(3000);
+var io = require('socket.io').listen(server);
 
 // Create a Johnny Five board instance to represent your Particle Photon.
 // Board is simply an abstraction of the physical hardware, whether it is 
@@ -112,5 +117,3 @@ board.on('ready', function() {
     });
   }); 
 });
-
-app.listen(3000);
