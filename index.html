@@ -1,12 +1,10 @@
+<!doctype html>
 <html>
   <head>
+    <title>ROBOKITTY - A DIY AUTOMATED CAT FEEDER</title>
+
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
-    <style>
-      body {
-        background-color: #74c7a4;
-        margin: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/style.css">
   </head>
   <body>
     <button name="on-button" class="turn-on mdl-button">Turn Motor On</button>
@@ -23,47 +21,9 @@
       <option value="8">Every 8 hours</option> 
     </select>
 
-    <button id="clear-schedule">Clear Set schedule</button>
+    <button id="clear-schedule">Clear Set Schedule</button>
 
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script>
-      var socket = io.connect('http://localhost');
-      var turnOn = document.getElementsByClassName("turn-on")[0];
-      var schedule = document.getElementById('schedule');
-
-      addEventHandler(turnOn, 'click', function(e) {
-        e.preventDefault();
-
-        log('you clicked on');
-        socket.emit('click');
-      });
-
-      addEventHandler(schedule, 'change', function() {
-        log(this.value);
-        socket.emit('feeding', this.value);
-      });
-
-      socket.on('setSchedule', function (timeValue) {
-        log(timeValue);
-      });
-
-      function addEventHandler(elem, eventType, handler) {
-        if (elem.addEventListener) {
-          elem.addEventListener(eventType, handler, false);
-        }
-        else if (elem.attachEvent) {
-          elem.attachEvent('on' + eventType, handler); 
-        }
-      }
-
-      function log(msg) {
-        if (console) {
-          console.log(msg);
-        }
-        else {
-          alert(msg);
-        }
-      }
-    </script>
+    <script src="/assets/script.js"></script>
   </body>
 </html>
