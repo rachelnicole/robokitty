@@ -1,10 +1,6 @@
 <html>
   <head>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
-    <script>
-      var socket = io.connect('http://localhost');
-    </script>
     <style>
       body {
         background-color: #74c7a4;
@@ -29,7 +25,9 @@
 
     <button id="clear-schedule">Clear Set schedule</button>
 
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script>
+      var socket = io.connect('http://localhost');
       var turnOn = document.getElementsByClassName("turn-on")[0];
       var schedule = document.getElementById('schedule');
 
