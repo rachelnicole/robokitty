@@ -9,8 +9,8 @@ var http = require('http'),
 
 
 // Set up the access credentials for Particle
-var token = config.get('auth.PARTICLE_KEY');
-var deviceId = config.get('auth.DEVICE_ID');
+var token = config.get('auth.PARTICLE_KEY'),
+    deviceId = config.get('auth.DEVICE_ID');
 
 if (!token || !deviceId) {
   console.log('You need to provide your PARTICLE_KEY and/or PHOTON_ID')
