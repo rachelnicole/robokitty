@@ -1,1 +1,38 @@
 /* Robokitty CSS */
+
+img.logo {
+  display: block;
+  margin: 0 auto;
+  width: 600px;
+}
+
+.feeder-controls {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+button.turn-on,
+button#clear-schedule {
+  -webkit-appearance: none;
+  color: white;
+  background: transparent;
+  border: 3px solid white;
+  padding: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+select#schedule {
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  height: 55px;
+  border: 0;
+  outline: 3px solid #fff;
+  background-color: transparent;
+  margin-bottom: 25px;
+}
