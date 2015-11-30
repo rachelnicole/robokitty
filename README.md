@@ -1,5 +1,5 @@
 # robokitty
-Is a DIY cat (or dog, I GUESS) feeder controlled over the web (locally for now) for less than $50.
+Is a DIY cat (or dog, or human) feeder controlled over the web (locally for now).
 
 There are two different feeding methods: feed instantly with the press of a button, or set up a CRON job to feed at hourly intervals.
 
