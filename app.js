@@ -75,7 +75,7 @@ board.on('ready', function() {
       setTimeout(function() { 
         servo.stop(); 
         console.log('settimeout');  
-      }, 3000);
+      }, 2000);
     });
 
     socket.on('feeding', function(timeValue){
@@ -106,7 +106,7 @@ board.on('ready', function() {
       setTimeout(function() { 
         servo.stop(); 
         console.log('settimeout');  
-      }, 3000);
+      }, 2000);
 
       }, null, true, 'America/New_York');
     });
