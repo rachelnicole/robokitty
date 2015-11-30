@@ -8,8 +8,8 @@ var http = require('http'),
 
 
 // Set up the access credentials for Particle
-var token = process.env.PARTICLE_KEY || 'REPLACE WITH YOUR PARTICLE KEY'; 
-var deviceId = process.env.PHOTON_ID || 'REPLACE WITH YOUR PHOTON ID';
+var token = process.env.PARTICLE_KEY || 'replace'; 
+var deviceId = process.env.PHOTON_ID || 'replace';
 
 // Send index.html to all requests
 var app = http.createServer(function(req, res) {
@@ -63,12 +63,19 @@ board.on('ready', function() {
 
     socket.on('click', function () {
       console.log('socket is on');
-      servo.cw(1);
+
+      // have servo turn counter clockwise incase any food is stuck before turning clockwise to dispense
+      servo.ccw(1);
+
+      setTimeout(function() { 
+        servo.cw(1); 
+        console.log('change direction');  
+      }, 1500);
 
       setTimeout(function() { 
         servo.stop(); 
         console.log('settimeout');  
-      }, 5000);
+      }, 3000);
     });
 
     socket.on('feeding', function(timeValue){
@@ -88,12 +95,18 @@ board.on('ready', function() {
 
       // Sets Cron Job for feeding schedule
       currentJob = new CronJob(feedingInterval, function() {
-        servo.cw(1);
+        
+      servo.ccw(1);
 
-        setTimeout(function() { 
-          servo.stop(); 
-          console.log('settimeout');  
-        }, 5000);
+      setTimeout(function() { 
+        servo.cw(1); 
+        console.log('change direction');  
+      }, 1500);
+
+      setTimeout(function() { 
+        servo.stop(); 
+        console.log('settimeout');  
+      }, 3000);
 
       }, null, true, 'America/New_York');
     });
