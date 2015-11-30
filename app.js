@@ -4,12 +4,19 @@ var http = require('http'),
     index = fs.readFileSync(path.join(__dirname, 'index.html')),
     five = require ('johnny-five'),
     Particle = require('particle-io'),
-    CronJob = require('cron').CronJob;
+    CronJob = require('cron').CronJob,
+    config = require('config');
 
 
 // Set up the access credentials for Particle
-var token = process.env.PARTICLE_KEY || 'replace'; 
-var deviceId = process.env.PHOTON_ID || 'replace';
+var token = config.get('auth.PARTICLE_KEY'),
+    deviceId = config.get('auth.DEVICE_ID');
+
+if (!token || !deviceId) {
+  console.log('You need to provide your PARTICLE_KEY and/or PHOTON_ID')
+  console.log('Add relevant information to the config/default.json file, you can find where to get this info in the README')
+  process.exit()
+}
 
 // Send index.html to all requests
 var app = http.createServer(function(req, res) {
