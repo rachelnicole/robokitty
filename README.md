@@ -29,6 +29,8 @@ Let's get started!
 * Heat Shrink Tube
 * Method of attaching servo horn to feeder, I used Loctite plastics bonding system which ruled.
 
+![Robokitty Tested](tested-approved.png)
+
 ## How-To
 
 Once you have all of your materials handy, you're ready to start.
