@@ -2,6 +2,10 @@
   "name": "Robokitty",
   "description": "Node Powered Automated Cat Feeder",
   "author": "Rachel White <loveless@gmail.com>",
+  "contributors": [
+    "Jacob M. Roufa <jacob.roufa@gmail.com>",
+    "Lee Dohm <lee@lee-dohm.com>"
+  ],
   "url": "http://imcool.online/robokitty",
   "repository": {
     "type": "git",
