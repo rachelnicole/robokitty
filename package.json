@@ -12,7 +12,7 @@
   "main": "app.js",
   "license": "GPL-2.0",
   "dependencies": {
-    "convict": "^1.0.1",
+    "config": "^1.17.1",
     "cron": "^1.0.9",
     "hapi": "^11.1.2",
     "inert": "^3.2.0",
