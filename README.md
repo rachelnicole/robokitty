@@ -27,7 +27,7 @@ Let's get started!
 * Solder
 * Wire Strippers
 * Heat Shrink Tube
-* Method of attaching servo horn to feeder, details to follow.
+* Method of attaching servo horn to feeder, I used Loctite plastics bonding system which ruled.
 
 ## How-To
 
